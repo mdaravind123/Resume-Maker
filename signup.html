@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup.css" />
+    <title>Sign Up</title>
+    <!-- <script>
+
+      // function welcome() {
+      //   if (
+      //     document.getElementById("username").value != "" &&
+      //     document.getElementById("password").value != "" &&
+      //     document.getElementById("username").value != ""
+      //   ) {
+      //     alert("Account Created Successfully! Please Login");
+      //   } else {
+      //     alert("Please Enter Details!");
+      //   }
+      // }
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDXNNhtJzt-IIl6soXt6vH81EAzGIo0phM",
+        authDomain: "resume-maker-9a18c.firebaseapp.com",
+        projectId: "resume-maker-9a18c",
+        storageBucket: "resume-maker-9a18c.appspot.com",
+        messagingSenderId: "1069800722579",
+        appId: "1:1069800722579:web:780d6850c3ee7bd8437d66",
+        measurementId: "G-5JW30V8MR5",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const form = document.getElementById("form");
+      const button = form.elements["button"];
+      const pass = form.elements["password"];
+
+      function show() {
+        const form = document.getElementById("form");
+        let pass = form.elements["password"].value;
+        console.log(pass);
+      }
+      function Signup() {
+        // let form = document.getElementById("form");
+        // let user = form.elements["username"].value;
+        // let pass = form.elements["password"].value;
+        // createUserWithEmailAndPassword(auth, user, pass).then(
+        //   (userCredential) => {
+        //     const user = userCredential.user;
+        alert("sign up successfull");
+      }
+      // );
+      // }
+
+      // pass.addEventListener("onkeyup", types);
+    </script> -->
+  </head>
+  <body>
+    <div class="container">
+      <h1
+        style="
+          text-align: center;
+          color: black;
+          font-size: 3rem;
+          font-family: 'Times New Roman', Times, serif;
+        "
+      >
+        Resume Maker
+      </h1>
+      <div class="box">
+        <h1>Sign up</h1>
+        <br />
+        <br />
+        <!-- <form id="form"> -->
+        <div class="inputbox">
+          <label
+            style="
+              color: black;
+              font-family: 'Times New Roman', Times, serif;
+              font-size: 120%;
+              font-weight: 300;
+            "
+            >Email</label
+          >
+          <br />
+          <input type="text" id="email" class="name" required />
+        </div>
+        <br />
+
+        <div class="inputbox">
+          <label
+            style="
+              color: black;
+              font-family: 'Times New Roman', Times, serif;
+              font-size: 120%;
+              font-weight: 300;
+            "
+            >Password</label
+          >
+          <br />
+          <input type="password" id="password" class="password" required />
+        </div>
+        <br />
+
+        <!--<div class="inputbox">
+          <label
+            style="
+              color: black;
+              font-family: 'Times New Roman', Times, serif;
+              font-size: 120%;
+              font-weight: 300;
+            "
+            >Email</label
+          >
+          <br />
+          <input type="email" id="email" class="email" required />
+        </div>-->
+        <br />
+        <button class="signupbtn" type="submit" id="button">
+          Create Account
+        </button>
+        <br />
+        <br />
+        <div class="login">
+          <a href="./index.html">Already have an Account?</a>
+        </div>
+        <!-- </form> -->
+      </div>
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDXNNhtJzt-IIl6soXt6vH81EAzGIo0phM",
+        authDomain: "resume-maker-9a18c.firebaseapp.com",
+        databaseURL: "https://resume-maker-9a18c-default-rtdb.firebaseio.com",
+        projectId: "resume-maker-9a18c",
+        storageBucket: "resume-maker-9a18c.appspot.com",
+        messagingSenderId: "1069800722579",
+        appId: "1:1069800722579:web:780d6850c3ee7bd8437d66",
+        measurementId: "G-5JW30V8MR5",
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      // const form = document.getElementById("form");
+      const button = document.getElementById("button");
+      const store = async () => {
+        const email = document.getElementById("email").value;
+        const pass = document.getElementById("password").value;
+        console.log(email, pass);
+        createUserWithEmailAndPassword(auth, email, pass)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            alert("sign up successfully");
+            window.location.href = "index.html";
+          })
+          .catch((error) => {
+            alert(error.message, error.code);
+          });
+      };
+
+      button.addEventListener("click", store);
+    </script>
+  </body>
+</html>

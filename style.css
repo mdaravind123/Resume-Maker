@@ -1,0 +1,63 @@
+h2{
+    color:firebrick;
+    text-align:center;
+    font-family:'pacifico', 'Arial Narrow', Arial, sans-serif;
+    font-size:200%;
+    font-weight:400;
+    text-shadow:1px 1px 3px #663399;
+}
+
+.Name,.DOB,.Address,.school,.collegename,.course{
+    color:black;
+    text-align:left;
+}
+#PhoneNo,#linkedin,#email{
+    color:black;
+    text-align:left;
+
+}
+.PersonalDetails{
+    color: rgb(58, 128, 0);
+    font-size:110%;
+}
+.pd{
+    padding:30px;
+    /*background:linear-gradient(45deg, rgb(135,129,255),rgb(255,110,110));*/
+    background-repeat:no-repeat;
+    background-size:2500px;
+    background-attachment:fixed;
+}
+
+.clip-circle{
+    clip-path: circle(46.1% at 50% 50%)
+}
+.body{
+    margin:15px 30px;
+    border:1px solid gray;
+}
+input[type="submit"],#preview-btn,#close-preview-btn,#add,#subtract{
+    background-color:green;
+    color:goldenrod;
+    padding:12px 20px;
+    border:None;
+    border-radius:4px;
+    cursor:pointer;
+    width:10%;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea,select{
+    width:15%;
+    padding:12px;
+    border:1px solid grey;
+    border-radius:5px;
+    margin:5px;
+
+}
+input[type="submit"]:hover{
+    background-color:red;
+
+}
+
+

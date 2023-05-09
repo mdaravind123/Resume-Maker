@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login</title>
+    <script>
+
+      function validate_name_input() {    
+        let V = txt_name_input.value;
+        if(txt_name_input.value.length==26) {
+          alert("Maximum length reached.");
+          txt_name_input.value = V.substr(0, V.length - 1);
+        } else if (V.length > 0 && !isAlphaOrSpace(V.charAt(V.length - 1))) {
+          alert("Only Alphabets and space are allowed.");
+          txt_name_input.value = V.substr(0, V.length - 1);
+        }    
+      }
+
+      function perform(){
+          document.getElementById("password").type=document.getElementById("showpassword").checked ? "email":"password";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <br>
+      <br>
+      <h1 style="text-align: center; color:black;font-size:3rem;font-family:'Times New Roman', Times, serif">Resume Maker</h1>
+      <div class="box">
+        <h1>Login</h1>
+        <br />
+        <br />
+        <!-- <form action="home.html" target="_blank"> -->
+          <div class="inputbox">
+            <label style="color: black;font-family:'Times New Roman', Times, serif;font-size:120%;
+            font-weight:300">Email</label>
+            <br />
+            <input type="email" placeholder="Email" class="name" id="username" required />
+          </div>
+          <br />
+
+          <div class="inputbox">
+            <label style="color:black;color: black;font-family:'Times New Roman', Times, serif;font-size:120%;
+            font-weight:300">Password</label
+            >
+            <br />
+            <input type="password" placeholder="password" class="password" id="password" maxlength="16"  required />
+          </div>
+          <br>
+          <input type="checkbox" class="showpassword" id="showpassword" onclick="perform()" >
+          <label  style="color: black;font-family:'Times New Roman', Times, serif;font-size:120%;
+          font-weight:300">Show Password</label>
+          <br />
+          <br />
+          <div class="forgotpassword"><a href="./signup.html">Forgot Password?</a></div>
+          <br>
+          <button class="loginbtn" id="login" type="submit" style="float:left">Login</button>
+          <input type="reset" id="reset" style="float:right;">
+          <br>
+          <br>
+          <br>
+          <div class="login"><a href="signup.html">Don't have an Account?</div>
+        <!-- </form> -->
+      </div>
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword
+      } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDXNNhtJzt-IIl6soXt6vH81EAzGIo0phM",
+        authDomain: "resume-maker-9a18c.firebaseapp.com",
+        databaseURL: "https://resume-maker-9a18c-default-rtdb.firebaseio.com",
+        projectId: "resume-maker-9a18c",
+        storageBucket: "resume-maker-9a18c.appspot.com",
+        messagingSenderId: "1069800722579",
+        appId: "1:1069800722579:web:780d6850c3ee7bd8437d66",
+        measurementId: "G-5JW30V8MR5",
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const SignIn=async()=>{
+    const signInEmail=username.value;
+    const signInPass=password.value;
+    signInWithEmailAndPassword(auth,signInEmail,signInPass)
+    .then((userCredential)=>{
+        const user=userCredential.user;
+        alert("logged in successfully");
+        window.location.href="home.html"
+})
+   .catch((error)=>{
+    const errorMessage=error.message;
+    alert(errorMessage);
+   })
+      }
+      let button=document.getElementById("login")
+      button.addEventListener('click',SignIn);
+    </script>
+  <script src="script.js"></script>
+
+  </body>
+</html>

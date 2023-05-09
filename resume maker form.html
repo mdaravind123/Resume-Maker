@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ResumeMaker</title>
+    <style>
+      body{
+        margin: 0;
+        background:rgb(255,110,110);
+        /*linear-gradient(45deg, rgb(135,129,255),rgb(255,110,110));*/
+      }
+    </style>
+    <!--
+    <script>
+      const txt_name_input=document.getElementById("name")
+      function isAlphaOrSpace(c) {
+  return typeof c === 'string' && c.length == 1 && ((c >= 'a' && c <= 'z') || (c>='A' && c <= 'Z') || c == ' ' || c=='' || c==null);
+}
+
+
+    function validate_name_input() {    
+    let V = txt_name_input.value;
+    if(txt_name_input.value.length==26) {
+      alert("Maximum length reached.");
+      txt_name_input.value = V.substr(0, V.length - 1);
+    } else if (V.length > 0 && !isAlphaOrSpace(V.charAt(V.length - 1))) {
+      alert("Only Alphabets and blankspace are allowed.");
+      txt_name_input.value = V.substr(0, V.length - 1);
+    }    
+}
+    </script>-->
+    
+  </head>
+
+  <body>
+    <form id="resumeform">
+      <div class="pd">
+      <fieldset>
+      <label class="PersonalDetails"
+        ><u><strong>Personal Details</strong></u></label
+      ><br />
+      <br />
+      <!--<input type="file" onchange="readURL(this);" align="right" />
+      <img id="blah" src="#" alt="your image" />-->
+      <!--class="clip-circle" width="200px" height="300px" align="right"-->
+      <!--<img class="clip-circle" src="./whatsapp image 1.jpeg" width="200px" height="300px" align="right">-->
+      <label class="Name">Name *</label>
+      <br>
+      <input type="text" class="Name1" id="name" placeholder="M D Aravind" style="color:black;width:400px" required /><br />
+      <br />
+      <label class="DOB" width="500px">Date of Birth *</label>
+      <br>
+      <input type="date" max="2030-12-31" min="1990-01-01" required style="color:black;width:400px" placeholder="dd-mm-yy"><br />
+      <br />
+      <label class="Nationality" >Nationality *</label>
+      <br>
+      <input type="text" class="Nationality" placeholder="India" style="color:black;width:400px"required /><br />
+      <br />
+
+      <label class="Address">Address *</label>
+      <br>
+      <textarea placeholder="Enter your Addres" rows="4" cols="50" style="color:black" required>
+      </textarea>
+      </label>
+    </fieldset>
+      <br>
+      <fieldset>
+      <label style="color: rgb(58, 128, 0)"
+        ><u><b>Contact</b></u></label
+      ><br />
+      <br />
+      <label id="PhoneNo">Phone No *</label>
+      <br>
+      <input type="text" maxlength="10" required style="color:black;width:400px"><br />
+      <br />
+      <label id="linkedin">Linked in *</label>
+      <br>
+      <!--value="https://www.linkedin.com/in/manniyam-aravind-a19821257"-->
+      <input
+        type="text"
+        style="width: 400px;color:black"
+        required
+      /><br />
+      <br />
+      <label id="email">Email *</label>
+      <br>
+      <!--value="mdaravind1983@yahoo.com"-->
+      <input
+        type="email"
+        style="width: 400px;color:black"
+        required
+      /><br />
+      </fieldset>
+  
+
+      <br />
+      <fieldset>
+      <label style="color: rgb(58, 128, 0)"
+        ><u><b>Education</b></u></label
+      ><br />
+      <br />
+      <label class="school">School *</label>
+      <br>
+      <!--value="mdaravind1983@yahoo.com"-->
+      <input
+        type="text"
+        style="width: 400px;color:black"
+     
+        required
+      /><br />
+      <br />
+      <label class="collegename">College Name *</label>
+      <br>
+      <!--value="Chennai Institute of Technology"-->
+      <input
+        type="text"
+        style="width: 400px"
+        required
+      /><br />
+      <br />
+      <label class="course">Course *</label>
+      <br>
+      <label>
+        <select name="course" style="width:425px">
+          <option value=""></option>
+          <option>Computer Science and Engineering</option>
+          <option>Electronics and Communication Engineering</option>
+          <opyion>Computer Science and Business Systems</opyion>
+          <option>CyberSecurity</option>
+          <option>Artificial Intelligence and Data Science</option>
+          <option>Artificial Intelligence and Machine Learning</option>
+          <option>Informaion Technology</option>
+          <option>Electrical and Electronics Engineering</option>
+          <option>Mechanical Engineering</option>
+          <option>Mechatronics Engineering</option>
+          <option>civil Engineering</option>
+          <option>Biomedical Engineering</option>
+        </select> </label
+      >
+      <br>
+      </fieldset>
+
+
+      <br />
+      <fieldset>
+      <label style="color: rgb(58, 128, 0)"
+        ><u><b>Skills</b></u></label
+      ><br />
+      <br />
+      <input type="radio" value="Python" id>
+      <label>Python</label><br />
+      <br />
+      <input type="radio" value="C" />
+      <label>C</label><br />
+      <br />
+      <input type="radio" value="C++" />
+      <label>C++</label><br />
+      <br />
+      <input type="radio" value="Java" />
+      <label>Java</label><br />
+      <br />
+      <input type="radio" value="HTML" />
+      <label>HTML</label><br />
+      <br />
+      <input type="radio" value="CSS" />
+      <label>CSS</label><br />
+      <br />
+      <input type="radio" value="JavaScript" />
+      <label>JavaScript</label><br />
+      </fieldset>
+      <br />
+      <fieldset>
+      <label style="color: rgb(58, 128, 0)"
+        ><u><b>Language</b></u></label
+      ><br />
+      <br />
+      <input type="checkbox" value="English">
+      <label>
+        <select name="Others" style="width:400px">
+          <option value=""></option>
+          <option>English</option>
+          <option>Japanese</option>
+          <opyion>German</opyion>
+          <option>Hindi</option>
+          <option>Tamil</option>
+          <option>Telugu</option>
+          <option>Malayalam</option>
+          <option>Kannadam</option>
+          <option>Bengali</option>
+        </select> </label
+      ><br />
+      <br />
+      <input type="checkbox" value="Hindi">
+      <label style="width:300px">
+        <select name="Others" style="width:400px">
+          <option value=""></option>
+          <option>English</option>
+          <option>Japanese</option>
+          <opyion>German</opyion>
+          <option>Hindi</option>
+          <option>Tamil</option>
+          <option>Telugu</option>
+          <option>Malayalam</option>
+          <option>Kannadam</option>
+          <option>Bengali</option>
+        </select> </label
+      ><br />
+      <br />
+      <input type="checkbox" value="Japanese" />
+      <label>
+        <select name="Others" style="width:400px">
+          <option value=""></option>
+          <option>English</option>
+          <option>Japanese</option>
+          <opyion>German</opyion>
+          <option>Hindi</option>
+          <option>Tamil</option>
+          <option>Telugu</option>
+          <option>Malayalam</option>
+          <option>Kannadam</option>
+          <option>Bengali</option>
+        </select> </label
+      ><br />
+      <br />
+      <input type="checkbox" value="Others" />
+      <label>
+        <select name="Others" style="width:400px">
+          <option value=""></option>
+          <option>English</option>
+          <option>Japanese</option>
+          <opyion>German</opyion>
+          <option>Hindi</option>
+          <option>Tamil</option>
+          <option>Telugu</option>
+          <option>Malayalam</option>
+          <option>Kannadam</option>
+          <option>Bengali</option>
+        </select> </label
+      ><br />
+      </fieldset>
+      <br />
+      <fieldset>
+      <label style="color: rgb(58, 128, 0)"
+        ><u><b>Projects</b></u></label
+      ><br />
+      <ol>
+        <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+        <br />
+        <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+        <br />
+        <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+        <br />
+
+      </ol>
+      </fieldset>
+      <br />
+      <fieldset>
+      <label style="color: rgb(58, 128, 0)"
+        ><u><b>Internships</b></u></label
+      ><br />
+      <ol>
+        <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+        <br />
+        <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+        <br />
+        <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+        <br />
+      </ol>
+      </fieldset>
+      <br />
+      <fieldset>
+      <label style="color: rgb(58, 128, 0)"
+        ><u><b>Certificates</b></u></label
+      ><br />
+      <br />
+       <ol id="listitems">
+       <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+        <!--
+        <button id="add" width="5px" onclick="addtextbox()">+</button>
+        <button id="subtract" width="5px">-</button-->
+       <br>
+       <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+      <br>
+      <br>
+      <li>
+          <label><input type="text" style="width: 400px" /></label>
+        </li>
+      </ol>
+      <br />
+      <br>
+      </fieldset>
+      <br>
+
+      <input type="submit" value="Print" onclick="window.print()"><br />
+      </div>
+    </form>
+    
+  <script src="script.js"></script>
+  </body>
+</html>
