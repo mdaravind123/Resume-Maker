@@ -9,61 +9,54 @@
     <style>
       body{
         margin: 0;
-        background:rgb(255,110,110);
+        background:gold;
         /*linear-gradient(45deg, rgb(135,129,255),rgb(255,110,110));*/
       }
     </style>
-    <!--
-    <script>
-      const txt_name_input=document.getElementById("name")
-      function isAlphaOrSpace(c) {
-  return typeof c === 'string' && c.length == 1 && ((c >= 'a' && c <= 'z') || (c>='A' && c <= 'Z') || c == ' ' || c=='' || c==null);
-}
-
-
-    function validate_name_input() {    
-    let V = txt_name_input.value;
-    if(txt_name_input.value.length==26) {
-      alert("Maximum length reached.");
-      txt_name_input.value = V.substr(0, V.length - 1);
-    } else if (V.length > 0 && !isAlphaOrSpace(V.charAt(V.length - 1))) {
-      alert("Only Alphabets and blankspace are allowed.");
-      txt_name_input.value = V.substr(0, V.length - 1);
-    }    
-}
-    </script>-->
-    
   </head>
 
   <body>
     <form id="resumeform">
       <div class="pd">
+        <select id = "selectTheme" class="theme">
+        <option value="Themes">Themes</option>
+        <option value="Themes1">Themes1</option>
+        <option value="Themes2">Themes2</option>
+        <option value="Themes3">Themes3</option>
+        <option value="Themes4">Themes4</option>
+        <option value="Themes5">Themes5</option>
+        </select>
+        <br>
+      <br>
+      <br>
       <fieldset>
       <label class="PersonalDetails"
         ><u><strong>Personal Details</strong></u></label
       ><br />
       <br />
-      <!--<input type="file" onchange="readURL(this);" align="right" />
-      <img id="blah" src="#" alt="your image" />-->
-      <!--class="clip-circle" width="200px" height="300px" align="right"-->
-      <!--<img class="clip-circle" src="./whatsapp image 1.jpeg" width="200px" height="300px" align="right">-->
+      <label>Profile</label>
+      <br>
+      <img id="image" class="clip-circle">
+      <br>
+      <input type="file" id="file" accept="image/jpeg,image/png,image/jpg">
+      <br>
+      <br>
       <label class="Name">Name *</label>
       <br>
-      <input type="text" class="Name1" id="name" placeholder="M D Aravind" style="color:black;width:400px" required /><br />
+      <input type="text" class="Name1" id="name" placeholder="M D Aravind" style="color:black;width:400px"  /><br />
       <br />
       <label class="DOB" width="500px">Date of Birth *</label>
       <br>
-      <input type="date" max="2030-12-31" min="1990-01-01" required style="color:black;width:400px" placeholder="dd-mm-yy"><br />
+      <input type="date" id="dob" max="2006-12-31" min="1970-01-01"  style="color:black;width:400px" placeholder="dd-mm-yy" ><br />
       <br />
       <label class="Nationality" >Nationality *</label>
       <br>
-      <input type="text" class="Nationality" placeholder="India" style="color:black;width:400px"required /><br />
+      <input type="text" id="nationality" class="Nationality" placeholder="India" style="color:black;width:400px" /><br />
       <br />
 
       <label class="Address">Address *</label>
       <br>
-      <textarea placeholder="Enter your Addres" rows="4" cols="50" style="color:black" required>
-      </textarea>
+      <textarea id="address" placeholder="Enter your Address" style="color:black;border-radius:5px;text-align:left;overflow:auto;height: 100px; width: 420px;margin:4px" value="" ></textarea>
       </label>
     </fieldset>
       <br>
@@ -74,7 +67,7 @@
       <br />
       <label id="PhoneNo">Phone No *</label>
       <br>
-      <input type="text" maxlength="10" required style="color:black;width:400px"><br />
+      <input type="text" id="phoneno" maxlength="10"  style="color:black;width:400px"><br />
       <br />
       <label id="linkedin">Linked in *</label>
       <br>
@@ -82,7 +75,8 @@
       <input
         type="text"
         style="width: 400px;color:black"
-        required
+        id="linkedin"
+        
       /><br />
       <br />
       <label id="email">Email *</label>
@@ -91,7 +85,8 @@
       <input
         type="email"
         style="width: 400px;color:black"
-        required
+        id="email"
+        
       /><br />
       </fieldset>
   
@@ -102,14 +97,15 @@
         ><u><b>Education</b></u></label
       ><br />
       <br />
-      <label class="school">School *</label>
+      <label id="school" class="school">School *</label>
       <br>
       <!--value="mdaravind1983@yahoo.com"-->
       <input
         type="text"
+        id="school"
         style="width: 400px;color:black"
      
-        required
+        
       /><br />
       <br />
       <label class="collegename">College Name *</label>
@@ -118,17 +114,18 @@
       <input
         type="text"
         style="width: 400px"
-        required
+        id="collegename"
+        
       /><br />
       <br />
       <label class="course">Course *</label>
       <br>
       <label>
-        <select name="course" style="width:425px">
+        <select name="course" id="course" style="width:425px">
           <option value=""></option>
           <option>Computer Science and Engineering</option>
           <option>Electronics and Communication Engineering</option>
-          <opyion>Computer Science and Business Systems</opyion>
+          <option>Computer Science and Business Systems</option>
           <option>CyberSecurity</option>
           <option>Artificial Intelligence and Data Science</option>
           <option>Artificial Intelligence and Machine Learning</option>
@@ -183,7 +180,7 @@
           <option value=""></option>
           <option>English</option>
           <option>Japanese</option>
-          <opyion>German</opyion>
+          <option>German</option>
           <option>Hindi</option>
           <option>Tamil</option>
           <option>Telugu</option>
@@ -199,7 +196,7 @@
           <option value=""></option>
           <option>English</option>
           <option>Japanese</option>
-          <opyion>German</opyion>
+          <option>German</option>
           <option>Hindi</option>
           <option>Tamil</option>
           <option>Telugu</option>
@@ -215,7 +212,7 @@
           <option value=""></option>
           <option>English</option>
           <option>Japanese</option>
-          <opyion>German</opyion>
+          <option>German</option>
           <option>Hindi</option>
           <option>Tamil</option>
           <option>Telugu</option>
@@ -231,7 +228,7 @@
           <option value=""></option>
           <option>English</option>
           <option>Japanese</option>
-          <opyion>German</opyion>
+          <option>German</option>
           <option>Hindi</option>
           <option>Tamil</option>
           <option>Telugu</option>
@@ -309,11 +306,60 @@
       <br>
       </fieldset>
       <br>
-
-      <input type="submit" value="Print" onclick="window.print()"><br />
+      <input type="submit" value="Print" id="print"><br />
       </div>
     </form>
     
-  <script src="script.js"></script>
+  <script>
+    const name=document.getElementById("name");
+    const dob=document.getElementById("dob");
+    const nationality=document.getElementById("nationality");
+    const address=document.getElementById("address");
+    const phoneno=document.getElementById("phoneno");
+    const linkedin=document.getElementById("linkedin");
+    const email=document.getElementById("email");
+    const school=document.getElementById("school");
+    const collegename=document.getElementById("collegename");
+    const course=document.getElementById("course");
+    
+    document.getElementById("selectTheme").addEventListener("change", function() {
+      let optionSelected = document.getElementById("selectTheme").value;
+      if(optionSelected == "Themes1") {
+        document.body.style.background = "rgb(135,129,255)";
+      }else if(optionSelected == "Themes2"){
+        document.body.style.background = "rgb(255,110,110)";
+      }else if(optionSelected == "Themes3"){
+        document.body.style.background = "pink";
+      }else if(optionSelected == "Themes4"){
+        document.body.style.background = "orange";
+      }else if(optionSelected == "Themes5"){
+        document.body.style.background = "cyan";
+      }else{
+        document.body.style.background = "rgb(255,110,110)";
+      }
+    });
+    document.getElementById("print").addEventListener("click", function(e) {
+      e.preventDefault();
+      if(name.value=="" || dob.value=="" || nationality.value=="" || address.value=="" ||phoneno.value=="" ||linkedin.value=="" ||email.value=="" ||school.value=="" ||collegename.value=="" ||course.value==""){
+        alert("Enter neccessary details!"); 
+
+      }else{
+        document.getElementById("print").style.display="none";
+        document.getElementById("selectTheme").style.display="none";
+        document.getElementById("file").style.display="none";
+        window.print()
+      }
+      
+    })
+
+    const file = document.querySelector("#file")
+    file.addEventListener("change", function() {
+      const reader = new FileReader()
+      reader.addEventListener("load", () => {
+        document.querySelector("#image").src = reader.result
+      })
+      reader.readAsDataURL(this.files[0]);
+    })
+  </script>
   </body>
 </html>

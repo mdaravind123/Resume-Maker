@@ -5,9 +5,6 @@
 .container{
     width:100%;
     height:100vh;
-    /*https://i.pinimg.com/originals/c1/d0/4e/c1d04ebfc9ef291916ffe35cf44c796e.jpg"*/
-    /*https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?cs=srgb&dl=pexels-creative-vix-9754.jpg&fm=jpg*/
-    /*https://static.vecteezy.com/system/resources/previews/006/891/235/original/abstract-gradient-background-light-blue-suitable-for-background-presentation-website-card-promotion-and-social-media-concept-vector.jpg*/
     background-image:url("https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?cs=srgb&dl=pexels-creative-vix-9754.jpg&fm=jpg");
     background-repeat: no-repeat;
 

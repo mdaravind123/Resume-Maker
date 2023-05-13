@@ -75,3 +75,5 @@ function getPasswordStrength(str_pwd) {
 
 
 
+
+
